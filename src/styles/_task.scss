@@ -1,0 +1,48 @@
+.task {
+  display: flex;
+  border-bottom: 1px solid rgba(rgb(0, 0, 0), 0.05);
+  transition: all 400ms ease-out;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.02);
+  }
+
+  .task-status {
+    margin: 1.2rem;
+    display: flex;
+    align-items: center;
+    &:after {
+      content: '⬜';
+    }
+  }
+  &.is-complete {
+    background: rgba(grey, 0.1);
+    .task-description {
+      text-decoration: line-through;
+    }
+    .task-status::after {
+      content: '✅';
+    }
+  }
+
+  .task-description {
+    width: 100%;
+    margin: 0;
+    padding: 1.2rem;
+    transition: background 0.2s;
+    flex: 1;
+    font-family: 'helvetica neue';
+    font-size: 1.2rem;
+    font-weight: 200;
+    border-left: 1px solid rgba(#d1e2ff, 0.7);
+  }
+
+  .task-options {
+    margin: 1.2rem;
+    display: flex;
+    align-items: center;
+    &:after {
+      content: '❌';
+    }
+  }
+}

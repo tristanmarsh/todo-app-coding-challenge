@@ -1,16 +1,16 @@
 import * as React from 'react'
+import { IAppState, hasState } from '../App'
 
-interface IViewFilterProps {
-  showComplete: boolean
-}
-
-export const ViewFilter = ({showComplete}: IViewFilterProps) => {
-  const count = 9
+export const ViewFilter = ({ state, setState }: hasState) => {
+  const toggleView = () => {
+    const newState = { ...state, showCompleted: !state.showCompleted }
+    setState(newState)
+  }
 
   return (
-    <nav>
-      <button type="button">
-        Show {showComplete ? 'Incomplete' : 'Complete'}
+    <nav className="navigation">
+      <button type="button" onClick={() => toggleView()}>
+        Show {state.showCompleted ? 'Incomplete' : 'Completed'}
       </button>
     </nav>
   )

@@ -1,0 +1,12 @@
+.app-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 1.3rem;
+  border-bottom: 1px solid rgba(rgb(0, 0, 0), 0.05);
+
+  .title {
+    margin: 0;
+  }
+}
