@@ -6,7 +6,8 @@
   "scripts": {
     "develop": "node fuse.ts",
     "build": "node fuse.ts dist",
-    "lint": "tslint 'src/**/*.{ts|tsx}'"
+    "lint": "tslint 'src/**/*.{ts|tsx}'",
+    "start": "tsc server.ts && node server.js"
   },
   "devDependencies": {
     "@types/node": "^12.7.5",
@@ -32,6 +33,7 @@
     }
   },
   "dependencies": {
+    "express": "^4.17.1",
     "tslint": "^5.20.0"
   },
   "engines": {
