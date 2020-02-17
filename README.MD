@@ -1,5 +1,7 @@
 # Todo List Web Application
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=tristanmarsh_todo-app-coding-challenge&metric=alert_status)](https://sonarcloud.io/dashboard?id=tristanmarsh_todo-app-coding-challenge)
+
 A todo list web app build with react, typescript and bundled with [FuseBox](https://fuse-box.org).
 
 ## Getting Started
