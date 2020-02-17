@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { IAppState, hasState } from '../App'
+import { hasState } from '../App'
 
 export const ViewFilter = ({ state, setState }: hasState) => {
   const toggleView = () => {
