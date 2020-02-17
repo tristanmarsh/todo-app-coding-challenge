@@ -44,9 +44,9 @@ export const App = () => {
   const [state, updateState] = React.useState(initialAppState)
 
   // override setState from React.useState to save all changes to localStorage
-  const setState = state => {
-    updateState(state)
-    window.localStorage.setItem('todoData', JSON.stringify(state))
+  const setState = newState => {
+    updateState(newState)
+    window.localStorage.setItem('todoData', JSON.stringify(newState))
   }
 
   return (
