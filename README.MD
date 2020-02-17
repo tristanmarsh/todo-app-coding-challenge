@@ -1,7 +1,6 @@
 # Todo List Web Application
 
 A todo list web app build with react, typescript and bundled with [FuseBox](https://fuse-box.org).
-Created for the [SleevesUpAU frontend dev challenge](https://github.com/SleevesUpAU/coding-test-frontend)
 
 ## Getting Started
 
