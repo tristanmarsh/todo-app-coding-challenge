@@ -15,12 +15,12 @@ type Task = {
 
 
 export const Task = ({ id, description, isComplete, state, setState }: ITaskProps) => {
-  const toggleStatus = ({id, description, isComplete}: Task): Task => ({id, description, isComplete: !isComplete})
+  const toggleStatus = (task: Task): Task => ({...task, isComplete: !isComplete})
 
-  const onTaskStatusClick = (id: number) => {
+  const onTaskStatusClick = (taskId: number) => {
     const newTasks = state.tasks.reduce((acc, task) => ([
         ...acc, 
-        (task.id === id
+        (task.id === taskId
           ? toggleStatus(task)
           : task
         )]
@@ -31,15 +31,16 @@ export const Task = ({ id, description, isComplete, state, setState }: ITaskProp
     })
   }
 
-  const onTaskDescriptionClick = (id: number) =>
+  const onTaskDescriptionClick = (taskId: number) =>
     console.error('Unimplemented function `onTaskDescriptionClick` invoked', {
       id,
     })
 
-  const onTaskOptionsClick = (id: number) => {
+  const onTaskOptionsClick = (taskId: number) => {
     const confirmMessage = `Delete task '${state.tasks.find(task => task.id === id).description}'?`
     window.confirm(confirmMessage) && setState( {...state, tasks: state.tasks.filter(task => task.id !== id)})
   }
+  
   return (
     <li className={`task ${isComplete ? 'is-complete' : ''}`}>
       <div onClick={e => onTaskStatusClick(id)} className="task-status"></div>
