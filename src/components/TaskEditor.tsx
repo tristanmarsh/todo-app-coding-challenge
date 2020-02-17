@@ -46,7 +46,7 @@ export const TaskEditor = ({ state, setState }: hasState) => {
 
     // Lazily scroll into view
     Array.from(document.querySelectorAll('.task')).forEach(item =>
-      (item as any).scrollIntoViewIfNeeded()
+      item.scrollIntoViewIfNeeded()
     )
   }
 
