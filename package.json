@@ -10,22 +10,22 @@
     "start": "tsc server.ts && node server.js"
   },
   "devDependencies": {
-    "@types/node": "^12.7.5",
-    "@types/react": "^16.9.2",
-    "@types/react-dom": "^16.9.0",
+    "@types/node": "^13.7.1",
+    "@types/react": "^16.9.20",
+    "@types/react-dom": "^16.9.5",
     "fuse-box": "^3.7.1",
-    "husky": "^3.0.5",
-    "node-sass": "^4.12.0",
+    "husky": "^4.2.3",
+    "node-sass": "^4.13.1",
     "precise-commits": "^1.0.2",
     "prettier": "1.18.2",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "terser": "^4.3.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "terser": "^4.6.3",
     "tslint-config-prettier": "^1.18.0",
-    "tslint-config-standard": "^8.0.1",
-    "tslint-react": "^4.0.0",
-    "typescript": "^3.6.3",
-    "uglify-js": "^3.6.0"
+    "tslint-config-standard": "^9.0.0",
+    "tslint-react": "^4.2.0",
+    "typescript": "^3.7.5",
+    "uglify-js": "^3.7.7"
   },
   "husky": {
     "hooks": {
@@ -34,10 +34,10 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "tslint": "^5.20.0"
+    "tslint": "^6.0.0"
   },
   "engines": {
-    "node": ">=12.10.0",
-    "yarn": ">=1.17.3"
+    "node": ">=12.14.0",
+    "yarn": ">=1.19.1"
   }
 }
