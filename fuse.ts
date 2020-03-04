@@ -14,7 +14,7 @@ context(
     getConfig(isProduction) {
       return FuseBox.init({
         homeDir: 'src',
-        output: 'dist/$name.js',
+        output: 'public/$name.js',
         hash: isProduction,
         sourceMaps: true,
         target: 'browser',
@@ -25,7 +25,7 @@ context(
           [
             SassPlugin(),
             CSSResourcePlugin({
-              dist: 'dist/css-resources',
+              dist: 'public/css-resources',
             }),
             CSSPlugin(),
           ],
