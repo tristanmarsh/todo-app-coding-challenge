@@ -1,4 +1,5 @@
 import * as React from 'react'
+
 import { hasState } from '../App'
 
 export interface ITaskProps extends hasState {
@@ -13,21 +14,26 @@ type Task = {
   isComplete: boolean
 }
 
-
-export const Task = ({ id, description, isComplete, state, setState }: ITaskProps) => {
-  const toggleStatus = (task: Task): Task => ({...task, isComplete: !isComplete})
+export const Task = ({
+  id,
+  description,
+  isComplete,
+  state,
+  setState,
+}: ITaskProps) => {
+  const toggleStatus = (task: Task): Task => ({
+    ...task,
+    isComplete: !isComplete,
+  })
 
   const onTaskStatusClick = (taskId: number) => {
-    const newTasks = state.tasks.reduce((acc, task) => ([
-        ...acc, 
-        (task.id === taskId
-          ? toggleStatus(task)
-          : task
-        )]
-    ), [])
+    const newTasks = state.tasks.reduce(
+      (acc, task) => [...acc, task.id === taskId ? toggleStatus(task) : task],
+      []
+    )
     setState({
       ...state,
-      tasks:newTasks
+      tasks: newTasks,
     })
   }
 
@@ -37,10 +43,13 @@ export const Task = ({ id, description, isComplete, state, setState }: ITaskProp
     })
 
   const onTaskOptionsClick = (taskId: number) => {
-    const confirmMessage = `Delete task '${state.tasks.find(task => task.id === id).description}'?`
-    window.confirm(confirmMessage) && setState( {...state, tasks: state.tasks.filter(task => task.id !== id)})
+    const confirmMessage = `Delete task '${
+      state.tasks.find(task => task.id === id).description
+    }'?`
+    window.confirm(confirmMessage) &&
+      setState({ ...state, tasks: state.tasks.filter(task => task.id !== id) })
   }
-  
+
   return (
     <li className={`task ${isComplete ? 'is-complete' : ''}`}>
       <div onClick={e => onTaskStatusClick(id)} className="task-status"></div>
@@ -55,4 +64,4 @@ export const Task = ({ id, description, isComplete, state, setState }: ITaskProp
       <div onClick={e => onTaskOptionsClick(id)} className="task-options"></div>
     </li>
   )
-  }
+}
